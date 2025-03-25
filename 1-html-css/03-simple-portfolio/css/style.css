@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+:root {
+    --background-color: #000;
+    --accent-color: purple;
+    --text-color: whitesmoke; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Tektur", sans-serif;
+    font-size: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    height: 100vh;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    background-color: var(--background-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
+    list-style: none;
+    font-size: 1rem;
+}
+
+.navbar__logo {
+    font-size: 2.5rem;
+    transition: 0.6s ease transform;
+    color: var(--accent-color);
+}
+
+.navbar__logo:hover {
+    transform: scale(1.2);
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a::before {
+    content: '';
+    bottom: -5px;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.6s ease;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+    transition: ease 0.6s color;
+}
+
+.navbar a.active {
+    color: var(--accent-color);
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+main {
+    margin-top: 15%;
+    width: 90%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 6rem;
+    margin-left: 7%;
+}
+
+.home__details h2 {
+    font-size: 4rem;
+}
+
+.home__details h3 {
+    margin-bottom: 3.5rem;
+}
+
+.home__details p {
+    font-size: 1.4rem;
+}
+
+.home span {
+    color: var(--accent-color);
+}
+
+.home__pfp img {
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid var(--accent-color);
+}
+
+.circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.home__social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.home__social a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    border: solid 2px var(--accent-color);
+    color: var(--text-color);
+}
+
+.home__social a:hover {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+    transform: scale(1.4);
+    box-shadow: 0 0 25px var(--accent-color);   /* adds a really nice glow */
+    transition: all 0.6s ease;
+}
+
+.home__btn {
+    display: inline-block;
+    margin-top: 1.6rem;
+    text-decoration: none;
+    color: var(--accent-color);
+    border: solid var(--accent-color) 2px;
+    border-radius: 4rem;
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--background-color);
+    transition: 0.3s ease;
+}
+
+.home__btn:hover {
+    transform: scale(1.2);
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    box-shadow: 0 0 25px var(--accent-color);   /* adds a really nice glow */
+}
+
+.home__dynamic-text {
+    position: relative;
+    display: inline-block; /* Ensure the element wraps the text */
+}
+
+.home__dynamic-text::before {
+    content: "Software Engineer"; /* Default text */
+    color: var(--accent-color);
+    animation: words 20s infinite; /* Text animation */
+}
+
+.home__dynamic-text::after {
+    content: "";
+    position: absolute;
+    right: -8px; /* Position the cursor at the end of the text */
+    top: 0;
+    width: 3px; /* Cursor width */
+    height: 100%;
+    background-color: var(--accent-color); /* Cursor color */
+    animation: cursor 0.6s infinite; /* Cursor blinking animation */
+}
+
+@keyframes cursor {
+    0%, 100% {
+        opacity: 1; /* Visible */
+    }
+    50% {
+        opacity: 0; /* Invisible */
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    21%, 40% {
+        content: "Software Engineer";
+    }
+    41%, 60% {
+        content: "Data Engineer";
+    }
+    61%, 80% {
+        content: "Youtuber";
+    }
+    81%, 100% {
+        content: "Club Leader";
+    }
+}

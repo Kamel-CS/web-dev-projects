@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #F8F9FA;
+    --accent-color: #0E1F2A;
+    --text-color: #2A2A2A;
+    --border-color: #E3E7EB;
+    --highlight: #FFD700;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* what's this doing? */
+}
+
+.navbar {
+    padding: 1.5rem 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;  /* priority to be on top of everything? */
+    display: flex;
+    justify-content: space-between;     /* how is it making things spread? */
+    align-items: center;
+    backdrop-filter: blur(10px);    /* what? */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar__logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;       /* space between logo and name */
+}
+
+.navbar__links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.navbar__links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.navbar__links a:hover::after {
+    width: 100%;
+}
+/* how the fuck the above animation was made? */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(14, 31, 58, 0.9), rgba(14, 31, 58, 0.5)),
+        url("../assets/car_background.jpg") center/cover fixed;   /* this makes any color looks great */
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;       /* what is this doing? */
+}
+
+/* cool animation that makes content show up from bottom to top */
+.hero__content {
+    max-width: 100%;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUp 1s forwards 0.5s;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero__content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.1;
+    position: relative;
+}
+
+.hero__content h1 span {
+    color: var(--highlight);
+}
+
+.hero__content p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.hero__cta-container {
+    display: flex;
+    gap: 1.5rem; 
+    margin-top: 3rem;
+}
+
+.hero__cta-container-button {
+    padding: 1.2rem;
+    background-color: var(--highlight);
+    color: var(--accent-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600; 
+}
+
+.hero__cta-container-button--secondary {
+    background-color: transparent;
+    color: var(--highlight);
+    border: 2px solid var(--border-color);
+}
+
+.hero__cta-container-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero__scrol-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;  /* center */
+    color: var(--highlight);
+    transform: translateY(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.why-choose--section-title,
+.testimonials--section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+}
+
+.why-choose {
+    padding: 8rem 5%;
+    background-color: var(--primary-color);
+}
+
+.why-choose--section-header,
+.testimonials--section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.why-choose--section-subtitle,
+.testimonials--section-subtitle {
+    color: #64748B;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.why-choose--benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-choose--benefit-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    border-color: var(--border-color);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.why-choose--benefit-card:hover { transform: translateY(-5px);    /* make it move up */ }
+
+.why-choose--benefit-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.why-choose--benefit-icon i {
+    color: var(--highlight);
+    font-size: 1.5rem;
+}
+
+/* testimonials section */
+.testimonials {
+    padding: 8rem 5%;
+    background-color: var(--secondary-color);
+}
+
+.testimonials--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials--card {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    position: relative;
+}
+
+.testimonials--client-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonials--client-info img {
+    border-radius: 50%;
+    object-fit: cover;      /* what is this doing */
+}
+
+.testimonials--client-details h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+
+.testimonials--client-details p {
+    color: #64748B;
+    font-size: 0.9rem;
+}
+
+.testimonials--text {
+    color: var(--text-color);
+    line-height: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.testimonials--rating { color: var(--highlight); }
+
+@media (max-width: 760px) {
+    .why-choose--benefit-card,
+    .testimonials--grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 4rem 5% 2rem;
+    margin-top: 4rem;
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer__section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--highlight);
+}
+
+.footer__section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6rem;
+}
+
+.footer__section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__section ul li { margin-bottom: 1rem; }
+
+.footer__section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer__section ul li a:hover { color: var(--highlight); }
+
+.footer__social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer__social-icons a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer__social-icons a:hover { color: var(--highlight); }
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
