@@ -1,44 +1,28 @@
-# Notes
+# HTML CSS Simple Login From
+
+### Quick Notes
 
 - **Input attributes:**
   -  `name`: for the backend.
   - `id`: for DOM.
 
 - **SVGs are Better than PNGs**:
-  - Can be manipulated using HTML.
+  - Can be manipulated using HTML (e.g., dimensions, colors).
   - Provides an `<svg>` element.
-  - The `for` attribute of the `label` should match the `id`, so clicking the icon is just like clicking the input.
+  - The `for` attribute of the `<label>` should match the `id` attribute of the `<input>`, so clicking the icon is just like clicking the input.
   - `fill` attribute to provide a color.
 
-- **Borders have 4 dimesions:**
+- **Borders have 4 dimensions:**
 For a border we can specify different attributes for each side (top, bottom, right, left)
 
 ---
 
 ### Hover Animation Trick
-Make the border of the form same color as its background and when hovered over change the border color to the desired one for the effect.
+Make the border of the form same as it's background (i.e., `none` effect but sill being applied), and when hovered over change the border's color to the desired one.
 
 ---
 
-### CSS Variables
-- Starts with `--`
-```css
-:root {
-    --accent-color: #084c61;
-    --base-color: #fff;
-    --text-color: #2e2b41;
-    --input-color: #f3f0ff;
-}
-
-body {
-    background-color: var(--base-color);
-}
-```
-`:root` is pseudo class that represents the `<html>` element. Used to define global variables.
-
----
-
-## Selectors
+### Selectors
 
 - **Directed vs Undirected Child:**
 ```html

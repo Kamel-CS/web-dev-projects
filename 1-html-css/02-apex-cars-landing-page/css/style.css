@@ -17,7 +17,7 @@
 body {
     background-color: var(--primary-color);
     color: var(--text-color);
-    overflow-x: hidden; /* what's this doing? */
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -25,11 +25,11 @@ body {
     background-color: rgba(255, 255, 255, 0.95);
     position: fixed;
     width: 100%;
-    z-index: 1000;  /* priority to be on top of everything? */
+    z-index: 1000;  /* priority to be on top of everything */
     display: flex;
-    justify-content: space-between;     /* how is it making things spread? */
+    justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);    /* what? */
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -70,7 +70,6 @@ body {
 .navbar__links a:hover::after {
     width: 100%;
 }
-/* how the fuck the above animation was made? */
 
 .hero {
     height: 100vh;
@@ -80,7 +79,7 @@ body {
     align-items: center;
     padding: 0 10%;
     position: relative;
-    overflow: hidden;       /* what is this doing? */
+    overflow: hidden;
 }
 
 /* cool animation that makes content show up from bottom to top */
@@ -257,7 +256,7 @@ body {
 
 .testimonials--client-info img {
     border-radius: 50%;
-    object-fit: cover;      /* what is this doing */
+    object-fit: cover;
 }
 
 .testimonials--client-details h4 {
