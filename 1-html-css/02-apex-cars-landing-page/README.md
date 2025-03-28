@@ -9,7 +9,7 @@
 - Explore.
 
 ### `area-label` Attribute
-Accessibility attribute used to provide a text description for elements that don’t have visible text (typically icons or buttons).
+Accessibility attribute used to provide a text description for elements that don’t have visible text (typically **icons** or **buttons**).
 Add semantic meaning and helps screen readers.
 
 ###  `overflow-x: hidden;`
@@ -47,5 +47,5 @@ Adds space between flex or grid items.
    - `animation: slideUp 1s forwards 0.5s` → Uses the `slideUp` keyframes, lasts 1 second, starts after 0.5s delay, and **keeps the final state** (`forwards`).
 
 3. **`@keyframes slideUp`**:
-   - The `to` keyword defines the **final state** of the animation (equivalent to `100%`).
-   - At the end (`to`), the element moves to its natural position (`translateY(0)`) and becomes fully visible (`opacity: 1`).
+   - The `to` keyword is equivalent to `100%`.
+   - At the end the element moves to its natural position (`translateY(0)`) and becomes fully visible (`opacity: 1`).

@@ -27,7 +27,7 @@ body {
 }
 
 .wrapper {
-    /* why use this to see the rounded borders? */
+    /* Visible rounded borders */
     box-sizing: border-box;
     background-color: var(--base-color);
     height: 100vh;
@@ -57,7 +57,7 @@ form {
     gap: 10px;
 }
 
-/* direct children? */
+/* direct children */
 form > div {
     width: 100%;
     display: flex;

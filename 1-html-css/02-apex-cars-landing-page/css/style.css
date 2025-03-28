@@ -207,7 +207,7 @@ body {
     text-align: center;
 }
 
-.why-choose--benefit-card:hover { transform: translateY(-5px);    /* make it move up */ }
+.why-choose--benefit-card:hover { transform: translateY(-5px);    /* move up */ }
 
 .why-choose--benefit-icon {
     width: 60px;

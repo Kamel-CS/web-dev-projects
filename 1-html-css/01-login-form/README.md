@@ -15,6 +15,8 @@
 - **Borders have 4 dimensions:**
 For a border we can specify different attributes for each side (top, bottom, right, left)
 
+- Focused inputs have a visible outline, to remove it: `outline: none`.
+
 ---
 
 ### Hover Animation Trick
