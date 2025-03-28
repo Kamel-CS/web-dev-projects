@@ -177,7 +177,7 @@ main {
     transform: scale(1.2);
     background-color: var(--accent-color);
     color: var(--background-color);
-    box-shadow: 0 0 25px var(--accent-color);   /* adds a really nice glow */
+    box-shadow: 0 0 25px var(--accent-color);
 }
 
 .home__dynamic-text {
